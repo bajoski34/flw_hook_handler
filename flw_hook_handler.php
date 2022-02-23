@@ -11,14 +11,16 @@
     */
 
 
-	function handle_success_hook( $response )
-	{
-	     // make a call to your server to update you transaction
-	}
+    function handle_success_hook( $response )
+    {
+	// response is in json, you will need to decode it
+	echo $response;
+    }
 
      function handle_failed_hook( $response )
      {
-         // make a call to your server to update you transaction
+	 // response is in json, you will need to decode it
+         echo $response;
      }
 
 	add_action('flw_webhook_after_action', 'handle_success_hook');
